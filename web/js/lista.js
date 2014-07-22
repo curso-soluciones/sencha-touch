@@ -37,7 +37,7 @@ Ext.application({
              itemTpl: '<div class="usuario">{nombre} <strong>{edad}</strong></div>',
             listeners : {
         itemtap: function (list, index, item, record) {
-            // Show next view based on current record
+    
             var nombre= record.get('nombre');
             Ext.Msg.confirm('Hola','haz seleccionado el item:'+nombre);
         }
