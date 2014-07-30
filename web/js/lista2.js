@@ -4,21 +4,21 @@
  * and open the template in the editor.
  */
 
-Ext.define('Usuario',{
+Ext.define('Alumno',{
     extend:'Ext.data.Model',
     config:{
         fields:[
             {name:'id', type:'int'},
             {name:'nombre',type:'string'},
-            {name:'sueldo',type:'float'}
+            {name:'email',type:'string'}
         ]
     ,
     proxy:{
         type:'rest',
-        url:'http://localhost:8093/maven-spring-hibernate/servicios/usuario',
+        url:'http://localhost:8084/maven-spring-hibernate/servicios/alumno',
         reader:{
             type:'json',
-            rootProperty:'usuarios'
+            rootProperty:'alumnos'
         }
     }
   }
@@ -26,7 +26,7 @@ Ext.define('Usuario',{
 
 store=Ext.create('Ext.data.Store',{
     autoLoad:'true',
-    model:'Usuario'
+    model:'Alumno'
 });
 
 Ext.application({
@@ -36,7 +36,7 @@ Ext.application({
         {
          fullscreen:true,
          store:store,
-         itemTpl:'<div class="usuario">{nombre} sueldo:<strong>{sueldo}</strong></div>'
+         itemTpl:'<div class="alumno">{nombre} email:<strong>{email}</strong> el id es: {id}</div>'
      });
         
     }
