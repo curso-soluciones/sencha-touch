@@ -16,7 +16,7 @@ Ext.define('Usuario',{
     ,
     proxy:{
         type:'rest',
-        url:'http://localhost:8092/maven-spring-hibernate/servicios/usuario',
+        url:'http://localhost:8084/maven-spring-hibernate/servicios/usuario',
         reader:{
             type:'json',
             rootProperty:'usuarios'
